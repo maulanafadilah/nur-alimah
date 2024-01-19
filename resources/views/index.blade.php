@@ -22,7 +22,7 @@
 <body>
 @include('elements/navbar')
 
-<div class="container w-full h-full p-4 mx-auto my-24 space-y-24">
+<div class="container w-full h-full p-4 mx-auto my-24 space-y-16">
     <div class="relative w-full xl:max-w-screen-xl mx-auto h-[524px] md:h-80 lg:h-[480px] xl:h-[524px] rounded-2xl object-cover flex flex-col overflow-hidden" style="background-image: url('/assets/images/hero-background.png');">
         <div class="">
             <img class="absolute h-32 lg:h-32 md:h-24 -left-24 md:-left-0 bottom-48 md:bottom-0" src="{{ URL::asset('assets/images/cloud-bottom.png') }}" alt="cloud" />
@@ -45,21 +45,21 @@
         </a>
     </div> -->
 
-    <section id="about" class="flex justify-between w-full mx-auto xl:max-w-screen-xl" x-data="aboutData()">
+    <section id="about" class="flex flex-col justify-between w-full mx-auto space-y-8 md:flex-row xl:max-w-screen-xl" x-data="aboutData()">
         <div class="flex space-x-7" id="image">
             <div class="" >
                 <img :src="currentContent.firstImage" alt="about-alimah-1" class="w-64 rounded-xl" :class="loadingScreen ? 'transition ease-in scale-105 duration-300' : 'transition ease-out scale-100 duration-300'">
             </div>
-            <div class="pt-12">
+            <div class="pt-10">
                 <img :src="currentContent.secondImage" alt="about-alimah-2" class="w-64 rounded-xl" :class="loadingScreen ? 'transition ease-in scale-105 duration-300' : 'transition ease-out scale-100 duration-300'">
             </div>
         </div>
-        <div class="flex flex-col justify-center w-1/2 space-y-8 text-center">
+        <div class="flex flex-col justify-start w-full space-y-8 text-center md:w-1/2">
             <div class="">
                 <h3 class="font-semibold text-[#6C6767] pb-1">ABOUT</h3>
                 <h2 class="text-2xl font-bold" x-text="currentContent.header"></h2>
             </div>
-            <p class="font-Poppins text-[#4A4A4A] text-justify w-4/5 mx-auto" x-text="currentContent.body"></p>
+            <p class="font-Poppins text-[#4A4A4A] text-justify w-11/12 md:w-4/5 mx-auto" x-text="currentContent.body"></p>
             <div class="flex items-center justify-center space-x-2">
                 <button @click="[ currentIndex = currentIndex != 0 ? currentIndex - 1 : 2, changeContent(currentIndex)]" class="flex items-center justify-center h-4 pr-6 focus:text-primary" type="button"><span class="font-bold material-symbols-rounded">arrow_left_alt</span></button>
                 <button @click="changeContent(0)" type="button" class="w-4 h-4 rounded-full" :class="currentIndex == 0 ? 'bg-primary' : 'bg-[#D9D9D9]' "></button>
@@ -91,7 +91,7 @@
                 {
                     firstImage: "{{ URL::asset('assets/images/alimah-about-1.png') }}",
                     secondImage: "{{ URL::asset('assets/images/alimah-about-2.png') }}",
-                    header: "Pekerjaan & Organisasi Alimah",
+                    header: "Pekerjaan & Organisasi",
                     body: "Alimah mengawali karir nya sebelum lulus kuliah dengan magang di industri teknologi, startup. Bidang startup yang menjadi titik awal karir nya yakni edutech. Kontribusi pekerjaan yang menjadi fokus pada peranan product tech marketing. Pada tahun 2021, pasca pandemi melandai. Alimah berkolaborasi dengan rekan antar kampus dan antar usia bersama mendirikan PT. Solusi Abadi Usaha dan diamanahi menjadi direktur. Perusahaan yang berfokus pada pendidikan kewirausahaan dan konsultasi bisnis."
                 },
             ],
