@@ -22,7 +22,7 @@
 <body>
 @include('elements/navbar')
 
-<div class="container w-full h-full p-4 mx-auto my-20">
+<div class="container w-full h-full p-4 mx-auto my-24 space-y-24">
     <div class="relative w-full xl:max-w-screen-xl mx-auto h-[524px] md:h-80 lg:h-[480px] xl:h-[524px] rounded-2xl object-cover flex flex-col overflow-hidden" style="background-image: url('/assets/images/hero-background.png');">
         <div class="">
             <img class="absolute h-32 lg:h-32 md:h-24 -left-24 md:-left-0 bottom-48 md:bottom-0" src="{{ URL::asset('assets/images/cloud-bottom.png') }}" alt="cloud" />
@@ -39,8 +39,78 @@
             <img class="absolute bottom-0 h-72 lg:h-96 xl:h-[480px] pl-2 lg:pl-0 md:right-10 lg:right-16" src="{{ URL::asset('assets/images/alimah.png') }}" alt="alimah">
         </div>
     </div>
+    <!-- <div class="flex justify-center w-full py-10">
+        <a href="#about">
+            <span class="text-5xl material-symbols-rounded text-primary animate-bounce">keyboard_arrow_down</span>
+        </a>
+    </div> -->
+
+    <section id="about" class="flex justify-between w-full mx-auto xl:max-w-screen-xl" x-data="aboutData()">
+        <div class="flex space-x-7" id="image">
+            <div class="" >
+                <img :src="currentContent.firstImage" alt="about-alimah-1" class="w-64 rounded-xl" :class="loadingScreen ? 'transition ease-in scale-105 duration-300' : 'transition ease-out scale-100 duration-300'">
+            </div>
+            <div class="pt-12">
+                <img :src="currentContent.secondImage" alt="about-alimah-2" class="w-64 rounded-xl" :class="loadingScreen ? 'transition ease-in scale-105 duration-300' : 'transition ease-out scale-100 duration-300'">
+            </div>
+        </div>
+        <div class="flex flex-col justify-center w-1/2 space-y-8 text-center">
+            <div class="">
+                <h3 class="font-semibold text-[#6C6767] pb-1">ABOUT</h3>
+                <h2 class="text-2xl font-bold" x-text="currentContent.header"></h2>
+            </div>
+            <p class="font-Poppins text-[#4A4A4A] text-justify w-4/5 mx-auto" x-text="currentContent.body"></p>
+            <div class="flex items-center justify-center space-x-2">
+                <button @click="[ currentIndex = currentIndex != 0 ? currentIndex - 1 : 2, changeContent(currentIndex)]" class="flex items-center justify-center h-4 pr-6 focus:text-primary" type="button"><span class="font-bold material-symbols-rounded">arrow_left_alt</span></button>
+                <button @click="changeContent(0)" type="button" class="w-4 h-4 rounded-full" :class="currentIndex == 0 ? 'bg-primary' : 'bg-[#D9D9D9]' "></button>
+                <button @click="changeContent(1)" type="button" class="w-4 h-4 rounded-full " :class="currentIndex == 1 ? 'bg-primary' : 'bg-[#D9D9D9]' "></button>
+                <button @click="changeContent(2)" type="button" class="w-4 h-4 rounded-full " :class="currentIndex == 2 ? 'bg-primary' : 'bg-[#D9D9D9]' "></button>
+                <button @click="[ currentIndex = currentIndex != 2 ? currentIndex + 1 : 0, changeContent(currentIndex)]" class="flex items-center justify-center h-4 pl-6 focus:text-primary" type="button"><span class="font-bold material-symbols-rounded">arrow_right_alt</span></button>
+            </div>
+        </div>
+    </section>
 
 </div>
+
+<script>
+    function aboutData(){
+        return{
+            contentData: [
+                {
+                    firstImage: "{{ URL::asset('assets/images/alimah-about-1.png') }}",
+                    secondImage: "{{ URL::asset('assets/images/alimah-about-2.png') }}",
+                    header: "Kenali Nur Alimah",
+                    body: "Perkenalkan nama saya Nur Alimah, biasa disapa AlImah. Lahir di Bengkulu 10 November 2000. Salah satu gadis Bengkulu yang memiliki ketertarikan pada marketing, manajemen, organisasi, kewirausahaan, pendidikan dan politik. Imah memiliki hobi sama seperti anak-anak muda Gen Z lainnya yaitu Kulineran dan Jalan-jalan. Disela waktu lain, imah hobi membaca buku, menonton film genre action berdiskusi dan menggambar."
+                },
+                {
+                    firstImage: "{{ URL::asset('assets/images/alimah-edu-1.png') }}",
+                    secondImage: "{{ URL::asset('assets/images/alimah-edu-2.png') }}",
+                    header: "Pendidikan Alimah",
+                    body: "Alimah menempuh pendidikan sekolah dasar hingga menengah di yayasan Alfida. Mulai dari SDIT IQRA 2, SMPIT IQRA, dan SMAIT IQRA Bengkulu. Pada tahun 2019, Alimah melanjutkan jenjang pendidikan vokasi di Telkom University. Gelar yang diraih dari jurusan  Manajemen pemasaran yakni AMd.M dengan predikat lulusan terbaik : IPK : 3.75 pada tahun 2022."
+                },
+                {
+                    firstImage: "{{ URL::asset('assets/images/alimah-about-1.png') }}",
+                    secondImage: "{{ URL::asset('assets/images/alimah-about-2.png') }}",
+                    header: "Pekerjaan & Organisasi Alimah",
+                    body: "Alimah mengawali karir nya sebelum lulus kuliah dengan magang di industri teknologi, startup. Bidang startup yang menjadi titik awal karir nya yakni edutech. Kontribusi pekerjaan yang menjadi fokus pada peranan product tech marketing. Pada tahun 2021, pasca pandemi melandai. Alimah berkolaborasi dengan rekan antar kampus dan antar usia bersama mendirikan PT. Solusi Abadi Usaha dan diamanahi menjadi direktur. Perusahaan yang berfokus pada pendidikan kewirausahaan dan konsultasi bisnis."
+                },
+            ],
+            currentIndex: 0,
+            loadingScreen: false,
+            get currentContent() {
+                return this.contentData[this.currentIndex];
+            },
+            changeContent(index){
+                this.loadingScreen = true;
+                setTimeout(() => {
+                    this.loadingScreen = false;
+                }, 600);
+                this.currentIndex = index;
+
+            }
+        }
+    }
+</script>
     
 </body>
 </html>
