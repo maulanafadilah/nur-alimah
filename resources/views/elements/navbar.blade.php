@@ -5,7 +5,7 @@
     <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Nur Alimah</span>
   </a>
   <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
-      <button type="button" class="text-primary hover:text-white border-2 font-semibold rounded-full border-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-blue-100 text-sm px-5 py-2.5 text-center">Dukung <span class="hidden md:inline-flex">Alimah</span></button>
+      <a href="#support" class="text-primary hover:text-white border-2 font-semibold rounded-full border-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-blue-100 text-sm px-5 py-2.5 text-center">Dukung <span class="hidden md:inline-flex">Alimah</span></a>
       <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -14,18 +14,18 @@
     </button>
   </div>
   <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-    <ul class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+    <ul class="flex flex-col p-4 mt-4 font-medium md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
       <li>
-        <a href="#" class="block px-3 py-2 text-sm text-white rounded bg-primary md:bg-transparent md:text-primary md:p-0 md:dark:text-blue-500" aria-current="page">About</a>
+        <a href="#about" class="block px-3 py-2 text-sm text-gray-900 rounded hover:bg-primary hover:text-white md:hover:bg-transparent md:hover:text-primary md:p-0" aria-current="page">About</a>
       </li>
       <li>
-        <a href="#" class="block px-3 py-2 text-sm text-gray-900 rounded md:hover:text-primary md:p-0">Message</a>
+        <a href="#campaign-message" class="block px-3 py-2 text-sm text-gray-900 rounded hover:bg-primary hover:text-white md:hover:bg-transparent md:hover:text-primary md:p-0">Message</a>
       </li>
       <li>
-        <a href="#" class="block px-3 py-2 text-sm text-gray-900 rounded md:hover:text-primary md:p-0">Issues</a>
+        <a href="#key-issues" class="block px-3 py-2 text-sm text-gray-900 rounded hover:bg-primary hover:text-white md:hover:bg-transparent md:hover:text-primary md:p-0">Issues</a>
       </li>
       <li>
-        <a href="#" class="block px-3 py-2 text-sm text-gray-900 rounded md:hover:text-primary md:p-0">Gallery</a>
+        <a href="#gallery" class="block px-3 py-2 text-sm text-gray-900 rounded hover:bg-primary hover:text-white md:hover:bg-transparent md:hover:text-primary md:p-0">Gallery</a>
       </li>
     </ul>
   </div>
