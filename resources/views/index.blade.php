@@ -55,7 +55,7 @@
                 <h3 class="font-semibold text-[#6C6767] pb-1">ABOUT</h3>
                 <h2 class="text-2xl font-bold" x-text="currentContent.header"></h2>
             </div>
-            <p class="font-Poppins text-[#4A4A4A] text-justify w-full xl:w-4/5 mx-auto leading-relaxed text-sm xl:text-base" x-text="currentContent.body"></p>
+            <p class="font-Poppins text-[#4A4A4A] text-justify w-full xl:w-4/5 mx-auto normal-case leading-relaxed text-sm xl:text-base" x-text="currentContent.body"></p>
             <div class="flex items-center justify-center space-x-2">
                 <button @click="[ currentIndex = currentIndex != 0 ? currentIndex - 1 : 2, changeContent(currentIndex)]" class="flex items-center justify-center h-4 pr-6 focus:text-primary" type="button"><span class="font-bold material-symbols-rounded">arrow_left_alt</span></button>
                 <button @click="changeContent(0)" type="button" class="w-4 h-4 rounded-full" :class="currentIndex == 0 ? 'bg-primary' : 'bg-[#D9D9D9]' "></button>
@@ -145,22 +145,22 @@
         </div>
         <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
             <div>
-                <img class="object-cover w-full rounded-lg h-72" src="{{ URL::asset('assets/images/gallery-1.jpeg') }}" alt="">
+                <img class="object-cover w-full h-48 rounded-lg md:h-72" src="{{ URL::asset('assets/images/gallery-1.jpeg') }}" alt="">
             </div>
             <div>
-                <img class="object-cover w-full rounded-lg h-72" src="{{ URL::asset('assets/images/gallery-2.jpeg') }}" alt="">
+                <img class="object-cover w-full h-48 rounded-lg md:h-72" src="{{ URL::asset('assets/images/gallery-2.jpeg') }}" alt="">
             </div>
             <div>
-                <img class="object-cover w-full rounded-lg h-72" src="{{ URL::asset('assets/images/gallery-3.jpeg') }}" alt="">
+                <img class="object-cover w-full h-48 rounded-lg md:h-72" src="{{ URL::asset('assets/images/gallery-3.jpeg') }}" alt="">
             </div>
             <div>
-                <img class="object-cover w-full rounded-lg h-72" src="{{ URL::asset('assets/images/gallery-4.jpeg') }}" alt="">
+                <img class="object-cover w-full h-48 rounded-lg md:h-72" src="{{ URL::asset('assets/images/gallery-4.jpeg') }}" alt="">
             </div>
             <div>
-                <img class="object-cover w-full rounded-lg h-72" src="{{ URL::asset('assets/images/gallery-5.jpeg') }}" alt="">
+                <img class="object-cover w-full h-48 rounded-lg md:h-72" src="{{ URL::asset('assets/images/gallery-5.jpeg') }}" alt="">
             </div>
             <div>
-                <img class="object-cover w-full rounded-lg h-72" src="{{ URL::asset('assets/images/gallery-6.jpeg') }}" alt="">
+                <img class="object-cover w-full h-48 rounded-lg md:h-72" src="{{ URL::asset('assets/images/gallery-6.jpeg') }}" alt="">
             </div>
         </div>
     </section>
@@ -197,7 +197,7 @@
                     firstImage: "{{ URL::asset('assets/images/alimah-about-1.png') }}",
                     secondImage: "{{ URL::asset('assets/images/alimah-about-2.png') }}",
                     header: "Kenali Nur Alimah",
-                    body: "Perkenalkan nama saya Nur Alimah, biasa disapa AlImah. Lahir di Bengkulu 10 November 2000. Salah satu gadis Bengkulu yang memiliki ketertarikan pada marketing, manajemen, organisasi, kewirausahaan, pendidikan dan politik. Imah memiliki hobi sama seperti anak-anak muda Gen Z lainnya yaitu Kulineran dan Jalan-jalan. Disela waktu lain, imah hobi membaca buku, menonton film genre action berdiskusi dan menggambar."
+                    body: "Perkenalkan nama saya Nur Alimah, biasa disapa Alimah. Lahir di Bengkulu 10 November 2000. Salah satu gadis Bengkulu yang memiliki ketertarikan pada marketing, manajemen, organisasi, kewirausahaan, pendidikan dan politik. Imah memiliki hobi sama seperti anak-anak muda Gen Z lainnya yaitu kulineran dan jalan-jalan. Di sela waktu lain, Imah hobi membaca buku, menonton film genre action berdiskusi dan menggambar."
                 },
                 {
                     firstImage: "{{ URL::asset('assets/images/alimah-edu-1.png') }}",
@@ -208,7 +208,7 @@
                 {
                     firstImage: "{{ URL::asset('assets/images/alimah-work-1.png') }}",
                     secondImage: "{{ URL::asset('assets/images/alimah-work-2.png') }}",
-                    header: "Pekerjaan & Organisasi",
+                    header: "Pekerjaan",
                     body: "Alimah mengawali karir nya sebelum lulus kuliah dengan magang di industri teknologi, startup. Bidang startup yang menjadi titik awal karir nya yakni edutech. Kontribusi pekerjaan yang menjadi fokus pada peranan product tech marketing. Pada tahun 2021, pasca pandemi melandai. Alimah berkolaborasi dengan rekan antar kampus dan antar usia bersama mendirikan PT. Solusi Abadi Usaha dan diamanahi menjadi direktur. Perusahaan yang berfokus pada pendidikan kewirausahaan dan konsultasi bisnis."
                 },
             ],
